@@ -1,22 +1,22 @@
 # site settings
-title: tabreturn // blog
-email: github.tabreturn.io@tabreturn.com
-description: "Welcome to my blog &ndash; a collection of posts covering a blend of technology, design, code, and creativity."
+title: blog title
+email: email@domain.com
+description: "Description for landing page"
 baseurl: "" # subpath, e.g. /blog
-github_username: tabreturn
-portfolio_website: http://portfolio.tabreturn.com
+github_username: username
+portfolio_website: http://portfolio.com
 
 # build settings
 markdown: kramdown
 
 # matomo settings
 # remove/comment lines to disable
-matomo_trackerurl: "*.tabreturn.github.io"
-matomo_sourceurl: "https://matomo.tabreturn.com/"
+matomo_trackerurl: "*.username.github.io"
+matomo_sourceurl: "https://matomo.domain.com/"
 matomo_siteid: 2
 
 # isso settings
 # remove/comment lines to disable
-isso_dataurl: "https://isso.tabreturn.com/"
-isso_sourcecurl: "https://isso.tabreturn.com/js/embed.min.js"
+isso_dataurl: "https://isso.domain.com/"
+isso_sourcecurl: "https://isso.domain.com/js/embed.min.js"
 isso_vote: "false"
