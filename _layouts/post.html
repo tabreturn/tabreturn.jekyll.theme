@@ -1,0 +1,19 @@
+---
+layout: default
+---
+
+<article itemscope itemtype="http://schema.org/BlogPosting">
+
+  {{ content }}
+
+  {% if page.comments %}
+
+  <p></p>
+  <hr/>
+  <p></p>
+
+  <section id="isso-thread"></section>
+  <noscript><p><img src="{{ site.matomo_sourceurl }}matomo.php?idsite={{ site.matomo_siteid }}" style="border:0;" alt="" /></p></noscript>
+  {% endif %}
+
+</article>

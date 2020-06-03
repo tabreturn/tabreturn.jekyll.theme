@@ -1,0 +1,81 @@
+---
+layout: default
+---
+
+<div id="reader-header" class="header">
+
+  <div id="intro">
+    <style>
+      #intro img {
+        width: 60px;
+        float: left;
+        margin: 0.15em 2em 0 0;
+      }
+      .dark #intro img {
+        border: solid white;
+        border-radius: 3px;
+        border-width: 4px 4px 2px 3px;
+        margin-top: -0.1em;
+      }
+    </style>
+    <img src="{{ site.url }}/img/logo.svg" alt="logo" />
+    {{ site.description }}
+  </div>
+
+  <p id="filter-options" style="text-align:right">
+    <a id="reverse-filter">&#8644; reverse</a> |
+    <a id="hide-all">hide all</a> |
+    <a id="show-all">show all</a>
+  </p>
+
+  <p id="categories">
+    tag filter:
+    {% assign sorted_categories = site.categories | sort %}
+    <span>
+    {% for category in sorted_categories %}
+      <a class="disabled">{{ category | first }}</a>
+    {% endfor %}
+    </span>
+  </p>
+
+  <p></p>
+
+</div>
+
+<div id="post-list">
+
+  {% for post in site.posts %}
+
+    {% assign sorted_categories = post.categories | sort %}
+
+    <p data-category="{{ sorted_categories | join:' ' }} {{ post.date | date:'%Y' }}" class="post">
+      <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+      <br />
+      <em class="post-meta">
+        tags:
+        {% for tag in sorted_categories %}
+          <span class="tag-{{ tag }}">{{ tag }}</span>
+        {% endfor %}
+      </em>
+    </p>
+
+  {% endfor %}
+
+</div>
+
+<script src="{{ "/js/categoryFilter.js" | prepend: site.baseurl }}"></script>
+<script>
+  if (location.hash) {
+    var hash = location.hash.slice(1);
+    hash = hash.split('-');
+  }
+
+  if (hash) {
+    categoryFilter(hash);
+    document.getElementById('intro').innerHTML = '';
+    document.getElementById('intro').style.paddingTop = 0;
+  }
+  else {
+    categoryFilter(['all']);
+  }
+</script>

@@ -1,0 +1,43 @@
+<script src="{{ "/js/typeControls.js" | prepend: site.baseurl }}"></script>
+<script>
+  typeControls();
+</script>
+
+{% if site.matomo_trackerurl %}
+<script>
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="{{ site.matomo_sourceurl }}";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '2']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+{% endif %}
+
+{% if site.isso_dataurl and page.comments %}
+<script data-isso="{{ site.isso_dataurl }}" src="{{ site.isso_sourcecurl }}" data-isso-vote="{{ site.isso_vote }}"></script>
+{% endif %}
+
+<script>
+
+  // external links open in new tab
+  var links = document.links;
+  for (var i=0, linksLength=links.length; i<linksLength; i++) {
+    if (links[i].hostname != window.location.hostname) {
+      links[i].target = '_blank';
+    }
+  }
+
+  // jump to anchor after page has fully loaded (so that images do not shift things)
+  window.onload = function() {
+    if (window.location.hash) {
+      document.location.hash = window.location.hash;
+    }
+    document.documentElement.style.scrollBehavior = 'smooth';
+  }
+
+</script>
