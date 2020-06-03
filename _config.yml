@@ -2,6 +2,7 @@
 title: blog title
 email: email@domain.com
 description: "Description for landing page"
+logo: 'img/logo.svg'
 baseurl: "" # subpath, e.g. /blog
 github_username: username
 portfolio_website: http://portfolio.com
