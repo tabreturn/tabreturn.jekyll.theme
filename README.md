@@ -7,7 +7,7 @@
 Check the ``_config.yml`` for configuration options. It includes parameters for
 Isso (a Disqus alternative) and Matomo (open-source analytics platform).
 
-* [demonstration](https://tabreturn.github.io/)
+You can view the theme in action at [tabreturn.github.io](https://tabreturn.github.io/).
 
 ## to-do
 - [x] mobile view style fixes for comment section
